@@ -31,7 +31,7 @@ public class LionTest {
     }
 
     @Test
-    public void eatMeatTest() throws Exception {
+    public void getFoodTest() throws Exception {
         Lion lion = new Lion(predator);
         Mockito.when(predator.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
@@ -44,14 +44,7 @@ public class LionTest {
     }
 
     @Test
-    public void getFoodTest() throws Exception {
-        Lion lion = new Lion("Самец", feline);
-        Mockito.when(feline.getFood(Mockito.anyString())).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
-    }
-
-    @Test
-    public void getUndefinedLionTest(){
+    public void getUndefinedLionTest() throws Exception{
         Feline feline = Mockito.mock(Feline.class);
         Assert.assertThrows(Exception.class, () -> {new Lion("Биссексуал", feline);});
     }

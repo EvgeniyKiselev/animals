@@ -22,7 +22,7 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
+    Feline feline;
 
     public int getKittens() {
         return feline.getKittens();
